@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_forms_2/formpage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key, required this.username});
@@ -15,7 +16,10 @@ class HomePage extends StatelessWidget {
             leading: const CircleAvatar(),
             title: Text("Hello ${username == "" ? "User" : username}"),
             trailing: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const FormPage()));
+              },
               icon: const Icon(Icons.notifications),
             ),
           ),
